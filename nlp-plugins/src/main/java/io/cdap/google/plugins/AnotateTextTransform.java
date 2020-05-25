@@ -197,6 +197,10 @@ public class AnotateTextTransform extends NLPTransform {
     return builder.build();
   }
 
+  protected Schema getOutputSchema() {
+    return SCHEMA;
+  }
+
   protected NLPMethod getMethod() {
     return NLPMethod.ANOTATE_TEXT;
   }

@@ -117,6 +117,10 @@ public class AnalyzeEntitySentimentTransform extends NLPTransform {
     return builder.build();
   }
 
+  protected Schema getOutputSchema() {
+    return SCHEMA;
+  }
+
   protected NLPMethod getMethod() {
     return NLPMethod.ANALYZE_ENTITY_SENTIMENT;
   }

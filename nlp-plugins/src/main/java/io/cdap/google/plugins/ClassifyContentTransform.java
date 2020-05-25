@@ -90,6 +90,10 @@ public class ClassifyContentTransform extends NLPTransform {
     return builder.build();
   }
 
+  protected Schema getOutputSchema() {
+    return SCHEMA;
+  }
+
   protected NLPMethod getMethod() {
     return NLPMethod.CLASSIFY_CONTENT;
   }

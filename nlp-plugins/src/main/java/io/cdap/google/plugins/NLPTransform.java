@@ -119,6 +119,8 @@ public abstract class NLPTransform extends Transform<StructuredRecord, Structure
     FailureCollector failureCollector = pipelineConfigurer.getStageConfigurer().getFailureCollector();
     config.validate(failureCollector, inputSchema);
     failureCollector.getOrThrowException();
+
+    pipelineConfigurer.getStageConfigurer().setOutputSchema(getOutputSchema());
   }
 
   @Override
@@ -147,6 +149,7 @@ public abstract class NLPTransform extends Transform<StructuredRecord, Structure
     }
   }
 
+  protected abstract Schema getOutputSchema();
   protected abstract NLPMethod getMethod();
   protected abstract StructuredRecord getRecordFromResponse(MessageOrBuilder message);
 

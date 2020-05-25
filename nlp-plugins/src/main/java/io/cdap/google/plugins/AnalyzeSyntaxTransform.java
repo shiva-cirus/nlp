@@ -152,6 +152,10 @@ public class AnalyzeSyntaxTransform extends NLPTransform {
     return builder.build();
   }
 
+  protected Schema getOutputSchema() {
+    return SCHEMA;
+  }
+
   protected NLPMethod getMethod() {
     return NLPMethod.ANALYZE_SYNTAX;
   }
